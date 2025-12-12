@@ -1,0 +1,38 @@
+body {
+  background:linear-gradient(135deg, #4b3e23, #6f6239);
+}
+.error-container {
+  text-align: center;
+  margin-top: 100px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.error-code {
+  font-size: 72px;
+  font-weight: bold;
+  color: #3c2f20;
+}
+
+.error-message {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #3c2f20;
+}
+
+.error-description {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.btn {
+  background-color: #3c2f20;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #2e2419;
+}
