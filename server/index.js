@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const indexRouter=require("./Routes/index")
 
 
+
 mongoose.connect(process.env.DB_URL).then(()=>{
   console.log("Database connected successfully")
 
@@ -16,8 +17,8 @@ mongoose.connect(process.env.DB_URL).then(()=>{
 
 
 })
+const PORT = process.env.PORT || 9000;
 
-const Port=Number(process.env.Port)
 app.use(express.json())
 
 app.use("/assets",express.static("public"))
@@ -30,6 +31,6 @@ app.use((err, req, res, next) => {
   res.status(500).json({ err: err.message }); 
 });
 
-    app.listen(Port,()=>{
-        console.log(`app is running on port ${Port}`)
+    app.listen(PORT,()=>{
+        console.log(`app is running on port ${PORT}`)
     })

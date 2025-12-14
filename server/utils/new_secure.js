@@ -1,28 +1,20 @@
-const {checkRole, verifyToken}=require("./jwt")
+require("dotenv").config();
+const jwt = require("jsonwebtoken");
+const Crypto=require("crypto");
 
+const generateToken=(payload)=>jwt.sign({
+  data: payload
+}, process.env.JWT_SECRET, { expiresIn: process.env.JWT_DURATION});
 
-const secure=(sysRole)=>{
-    return (req,res,next)=>{
-        try{
-        const authHeader = req.headers["authorization"];
-if (!authHeader) throw new Error("Token is missing");
+const verifyToken=(token)=>jwt.verify(token,process.env.JWT_SECRET)
 
-const token = authHeader.split(" ")[1]; // removes "Bearer"
-        //check if token exist or not
-        if(!token) throw new Error("Token is missing") 
-        const isValid=verifyToken(token)
-        if(!isValid) throw new Error("Token is expired ")
-            const {data}=isValid
-            console.log({data,sysRole})
-            const validRole=checkRole({sysRole,userRole:data?.role || [] })
-            if(!validRole) throw new Error("User unauthorized")
-            next();
-    }
-catch(e){
-    next(e);
-    
-}
+const checkRole=({sysRole,userRole})=>
+    userRole.some(role=>sysRole.includes(role))
+
+const generateOtp=()=>{
+  return Crypto.randomInt(100000,999999)
 }
 
-}
-module.exports={secure}
+console.log(generateOtp())
+
+module.exports={checkRole,generateToken,verifyToken,generateOtp}

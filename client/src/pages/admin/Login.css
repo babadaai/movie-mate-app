@@ -1,10 +1,17 @@
 /* Login.css */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 .login-wrapper {
   display: flex;
   justify-content: center; /* center horizontally */
   align-items: center;     /* center vertically */
   height: 100vh;           /* full viewport height */
   background: linear-gradient(135deg, #4b3e23, #6f6239);
+ 
 }
 
 .login-card {
@@ -13,7 +20,9 @@
   border-radius: 16px;
   background-color: #fff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  text-align: center;
+  /* text-align: center;
+  align-items: center;  */
+  
 }
 
 .login-card img {
@@ -32,6 +41,8 @@
   margin-bottom: 15px;
   border-radius: 8px;
   border: 1px solid #ccc;
+   align-items: center;     
+   
 }
 
 .btn-primary {
