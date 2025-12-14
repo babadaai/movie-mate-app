@@ -1,59 +1,62 @@
-/* Background */
+/* Login.css */
 .login-wrapper {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;     /* center vertically */
+  height: 100vh;           /* full viewport height */
   background: linear-gradient(135deg, #4b3e23, #6f6239);
-  height: 100vh;
-  margin: 0;
-  font-family: "Segoe UI", sans-serif;
 }
 
-/* Card */
 .login-card {
-  width: 430px;
+  width: 400px;
+  padding: 30px;
   border-radius: 16px;
-  padding: 25px 30px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  background: #fff;
-  animation: fadeIn 0.6s ease-in-out;
-}
-
-/* Title */
-.login-title {
+  background-color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   text-align: center;
-  font-weight: 700;
-  margin-top: 15px;
+}
+
+.login-card img {
   margin-bottom: 20px;
-  color: #3c2f20;
 }
 
-/* Form */
+.login-title {
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
 .form-control {
-  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
-/* Button */
 .btn-primary {
-  background-color: #3c2f20;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #4b3e23;
   border: none;
-  border-radius: 10px;
-  padding: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .btn-primary:hover {
-  background-color: #2e2419;
+  background-color: #6f6239;
 }
 
-/* Forgot password link */
-.forgot-link {
-  color: #3c2f20;
+.forgot-link,
+.Register {
+  display: block;
+  margin-top: 10px;
+  color: #4b3e23;
   text-decoration: none;
 }
 
-.forgot-link:hover {
+.forgot-link:hover,
+.Register:hover {
   text-decoration: underline;
-}
-
-/* Animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
 }
